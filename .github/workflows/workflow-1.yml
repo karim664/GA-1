@@ -15,11 +15,9 @@ jobs:
       - name: Pull Docker Image
         run: docker pull abdelazizibrahim/abdelazizim:v1
 
-      - name: Run Docker Container
-        run: docker run --rm abdelazizibrahim/abdelazizim:v1
-      
-      - name: stop container after 2 minutes
+      - name: Run Docker Container and stop after 1 minute
         run: |
-          sleep 120
+          docker run --rm abdelazizibrahim/abdelazizim:v1
+          sleep 60
           docker ps -q --filter "ancestor=abdelazizibrahim/abdelazizim:v1" | xargs -r docker stop
         continue-on-error: true
