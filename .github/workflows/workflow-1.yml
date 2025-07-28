@@ -13,8 +13,8 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Pull Docker Image
-        run: docker pull abdelazizibrahim/travel-agency:v1
+        run: docker pull abdelazizibrahim/abdelazizim:v1
 
       - name: Run Docker Container
-        run: docker run --rm abdelazizibrahim/travel-agency:v1
+        run: docker run --rm abdelazizibrahim/abdelazizim:v1
 
