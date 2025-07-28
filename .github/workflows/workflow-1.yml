@@ -18,6 +18,5 @@ jobs:
       - name: Run Docker Container and stop after 1 minute
         run: |
           docker run --rm abdelazizibrahim/abdelazizim:v1
-          sleep 60
-          docker ps -q --filter "ancestor=abdelazizibrahim/abdelazizim:v1" | xargs -r docker stop
+          docker stop $(docker ps -q --filter ancestor=abdelazizibrahim/abdelazizim:v1)
         continue-on-error: true
